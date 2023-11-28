@@ -1,15 +1,15 @@
 # Codigo original: https://github.com/noorkhokhar99/weapon-detection-python-opencv-withyolov5-
+# Download yolov3_training_2000.weights: https://drive.google.com/drive/folders/1g44ApwZcTKVfoHJxxN_caI23XezYCEg-
 
 import cv2
 import numpy as np
 
-# Load Yolo
+# Carrega yolo
 net = cv2.dnn.readNet("yolov3_training_2000.weights", "yolov3_testing.cfg")
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 classes = ["Weapon"]
 
-# 0 indicates the default camera (usually the built-in webcam)
 cap = cv2.VideoCapture("arma1.mp4")
 
 while True:
